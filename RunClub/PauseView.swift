@@ -1,64 +1,89 @@
 //
-//  RunView.swift
+//  PauseView.swift
 //  RunClub
 //
-//  Created by Phoon Thet Pine on 14/4/25.
+//  Created by Phoon Thet Pine on 15/4/25.
 //
 
 import SwiftUI
+import MapKit
 import AudioToolbox
 
-/// A view that displays live metrics during a run session, such as distance, pace, and elasped time.
-/// Includes control buttons to pause or stop the run.
-struct RunView: View {
+struct PauseView: View {
     
     @EnvironmentObject var runTracker: RunTracker
     
     var body: some View {
         VStack {
-            // Top row: Distance, BPM (placeholder, Pace)
+            AreaMap(region: $runTracker.region)
+                .ignoresSafeArea()
+                .frame(height: 300)
+            
             HStack {
                 VStack {
-                    // Distance display
-                    Text("\(runTracker.distance, specifier: "%.2f") m")
+                    Text("\(runTracker.distance / 1000, specifier: "%.2f")")
                         .font(.title3)
                         .bold()
                     
-                    Text("Distance")
+                    Text("Km")
                 }
                 .frame(maxWidth: .infinity)
-                 
+                
                 VStack {
-                    // Placeholder for heart rate
+                    Text("\(runTracker.pace, specifier: "%.2f") min")
+                        .font(.title3)
+                        .bold()
+                    
+                    Text("Avg Pace")
+                }
+                .frame(maxWidth: .infinity)
+
+                
+                VStack {
+                    Text("\(runTracker.elapsedTime.convertDurationToString())")
+                        .font(.title3)
+                        .bold()
+                    
+                    Text("Time")
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .padding()
+            
+            HStack {
+                VStack {
+                    Text("0")
+                        .font(.title3)
+                        .bold()
+                    
+                    Text("Calories")
+                }
+                .frame(maxWidth: .infinity)
+                
+                VStack {
+                    Text("0f")
+                        .font(.title3)
+                        .bold()
+                    
+                    Text("Elevation")
+                }
+                .frame(maxWidth: .infinity)
+
+                
+                VStack {
+                    Text("65")
+                        .font(.title3)
+                        .bold()
+                    
                     Text("BPM")
                 }
                 .frame(maxWidth: .infinity)
-                
-                VStack {
-                    // Pace Display
-                    Text("\(runTracker.pace, specifier: "%.2f") min / km")
-                        .font(.title3)
-                        .bold()
-                    
-                    Text("Pace")
-                }
-                .frame(maxWidth: .infinity)
             }
-                        
-            // Middle: Elaspe time display
-            VStack {
-                Text("\(runTracker.elapsedTime.convertDurationToString())")
-                    .font(.system(size: 64))
-                
-                Text("Time")
-                    .foregroundStyle(.gray)
-            }
-            .frame(maxHeight: .infinity)
-                  
-            // Bottom: Stop and Pause Buttons
+            .padding()
+            
             HStack {
                 Button {
-                    // nothing on press
+                    // no action on tap of stop button
                 } label: {
                     Image(systemName: "stop.fill")
                         .font(.largeTitle)
@@ -79,9 +104,11 @@ struct RunView: View {
                 
                 // Pause Button
                 Button {
-                    runTracker.pauseRun()
+                    withAnimation {
+                        runTracker.resumeRun()
+                    }
                 } label: {
-                    Image(systemName: "pause.fill")
+                    Image(systemName: "play.fill")
                         .font(.largeTitle)
                         .foregroundStyle(.white)
                         .padding(36)
@@ -90,13 +117,13 @@ struct RunView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            .frame(maxHeight: .infinity, alignment: .bottom)
         }
         .frame(maxHeight: .infinity, alignment: .top)
-        .background(.yellow)
     }
 }
 
 #Preview {
-    RunView()
+    PauseView()
         .environmentObject(RunTracker())
 }
