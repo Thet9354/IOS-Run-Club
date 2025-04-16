@@ -9,7 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeView()
+        if let session = AuthService.shared.currentSession {
+            HomeView()
+        } else {
+            LoginView()
+        }
     }
 }
 

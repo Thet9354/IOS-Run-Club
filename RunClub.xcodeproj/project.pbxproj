@@ -6,6 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D32AC8BD2DAFDA7A0062068B /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8BC2DAFDA7A0062068B /* Auth */; };
+		D32AC8BF2DAFDA7A0062068B /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8BE2DAFDA7A0062068B /* Functions */; };
+		D32AC8C12DAFDA7A0062068B /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8C02DAFDA7A0062068B /* PostgREST */; };
+		D32AC8C32DAFDA7A0062068B /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8C22DAFDA7A0062068B /* Realtime */; };
+		D32AC8C52DAFDA7A0062068B /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8C42DAFDA7A0062068B /* Storage */; };
+		D32AC8C72DAFDA7A0062068B /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = D32AC8C62DAFDA7A0062068B /* Supabase */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		D32AC88D2DABC4AC0062068B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +38,22 @@
 		D32AC8962DABC4AC0062068B /* RunClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D32AC8CB2DAFDE4F0062068B /* Exceptions for "RunClub" folder in "RunClub" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = D32AC87E2DABC4AB0062068B /* RunClub */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D32AC8812DABC4AB0062068B /* RunClub */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D32AC8CB2DAFDE4F0062068B /* Exceptions for "RunClub" folder in "RunClub" target */,
+			);
 			path = RunClub;
 			sourceTree = "<group>";
 		};
@@ -52,6 +74,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32AC8C12DAFDA7A0062068B /* PostgREST in Frameworks */,
+				D32AC8BF2DAFDA7A0062068B /* Functions in Frameworks */,
+				D32AC8C72DAFDA7A0062068B /* Supabase in Frameworks */,
+				D32AC8BD2DAFDA7A0062068B /* Auth in Frameworks */,
+				D32AC8C52DAFDA7A0062068B /* Storage in Frameworks */,
+				D32AC8C32DAFDA7A0062068B /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +140,12 @@
 			);
 			name = RunClub;
 			packageProductDependencies = (
+				D32AC8BC2DAFDA7A0062068B /* Auth */,
+				D32AC8BE2DAFDA7A0062068B /* Functions */,
+				D32AC8C02DAFDA7A0062068B /* PostgREST */,
+				D32AC8C22DAFDA7A0062068B /* Realtime */,
+				D32AC8C42DAFDA7A0062068B /* Storage */,
+				D32AC8C62DAFDA7A0062068B /* Supabase */,
 			);
 			productName = RunClub;
 			productReference = D32AC87F2DABC4AB0062068B /* RunClub.app */;
@@ -195,6 +229,9 @@
 			);
 			mainGroup = D32AC8762DABC4AB0062068B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D32AC8802DABC4AB0062068B /* Products */;
 			projectDirPath = "";
@@ -400,6 +437,7 @@
 				DEVELOPMENT_TEAM = K8FKWBYV9S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunClub/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow access to enjoy our app";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to enjoy our app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -430,6 +468,7 @@
 				DEVELOPMENT_TEAM = K8FKWBYV9S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RunClub/Info.plist;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Please allow access to enjoy our app";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to enjoy our app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -562,6 +601,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D32AC8BC2DAFDA7A0062068B /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		D32AC8BE2DAFDA7A0062068B /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		D32AC8C02DAFDA7A0062068B /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		D32AC8C22DAFDA7A0062068B /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		D32AC8C42DAFDA7A0062068B /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		D32AC8C62DAFDA7A0062068B /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D32AC8BB2DAFDA7A0062068B /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D32AC8772DABC4AB0062068B /* Project object */;
 }
