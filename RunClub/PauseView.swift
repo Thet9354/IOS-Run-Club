@@ -11,14 +11,17 @@ import AudioToolbox
 
 struct PauseView: View {
     
+    // MARK: VARIABLES
     @EnvironmentObject var runTracker: RunTracker
     
     var body: some View {
         VStack {
+            // MARK: MAP DISPLAY
             AreaMap(region: $runTracker.region)
                 .ignoresSafeArea()
                 .frame(height: 300)
             
+            // MARK: DISTANCE, PACE, TIME DISPLAY
             HStack {
                 VStack {
                     Text("\(runTracker.distance / 1000, specifier: "%.2f")")
@@ -29,6 +32,7 @@ struct PauseView: View {
                 }
                 .frame(maxWidth: .infinity)
                 
+                // PACE
                 VStack {
                     Text("\(runTracker.pace, specifier: "%.2f") min")
                         .font(.title3)
@@ -38,7 +42,7 @@ struct PauseView: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                
+                // TIME
                 VStack {
                     Text("\(runTracker.elapsedTime.convertDurationToString())")
                         .font(.title3)
@@ -50,7 +54,9 @@ struct PauseView: View {
             }
             .padding()
             
+            // MARK: PLACEHOLDER METRICS
             HStack {
+                // Calories
                 VStack {
                     Text("0")
                         .font(.title3)
@@ -60,6 +66,7 @@ struct PauseView: View {
                 }
                 .frame(maxWidth: .infinity)
                 
+                // Elevation
                 VStack {
                     Text("0f")
                         .font(.title3)
@@ -69,7 +76,7 @@ struct PauseView: View {
                 }
                 .frame(maxWidth: .infinity)
 
-                
+                // Heart Rate
                 VStack {
                     Text("65")
                         .font(.title3)
@@ -81,6 +88,7 @@ struct PauseView: View {
             }
             .padding()
             
+            // MARK: CONTROL BUTTONS
             HStack {
                 Button {
                     // no action on tap of stop button
@@ -96,6 +104,7 @@ struct PauseView: View {
                 .simultaneousGesture(LongPressGesture().onEnded({ _ in
                     withAnimation {
                         runTracker.stopRun()
+                        // Haptic feedback on stop
                         AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate)) { }
                     }
                 }))
