@@ -44,8 +44,6 @@ It integrates **MapKit** for real-time route tracking, **Supabase** for secure u
 |:---:|:---:|:---:|:---:|
 | ![HomeView Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4879.PNG) | ![Countdown Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4881.PNG) | ![Running Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4882.PNG) | ![ActivityView Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4880.PNG) |
 
-> Make sure to place your screenshots inside a `/screenshots/` folder in your repo and name them accordingly.
-
 ---
 
 ## 🚀 Getting Started
