@@ -10,7 +10,14 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         if let session = AuthService.shared.currentSession {
-            HomeView()
+            RunClubTabView()
+                .task {
+                    do {
+                        try await HealthManager.shared.requestAuthorization()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
         } else {
             LoginView()
         }

@@ -10,8 +10,8 @@ import Supabase
 
 /// Holds sensetive credentias required to connect to Supabase backend
 struct Secrets {
-    static let supbaseURL = URL(string: "https://mcguanfjvtktzszursay.supabase.co")!
-    static let supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1jZ3VhbmZqdnRrdHpzenVyc2F5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ4MDY0MDMsImV4cCI6MjA2MDM4MjQwM30.gQTVmFwFBRohdN9TzVljP1nNmHO3W_ScO__Se-cqQqo"
+    static let supbaseURL = URL(string: "Enter your supbaseURL here")!
+    static let supabaseKey = "Enter your supabaseKey here"
 }
 
 /// Singleton class that handles authentication logic using Supabase
