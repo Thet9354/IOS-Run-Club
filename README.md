@@ -40,9 +40,9 @@ It integrates **MapKit** for real-time route tracking, **Supabase** for secure u
 
 ## 📲 Screenshots
 
-| Home View | Countdown | Running Tracker | Activity View | Health App Sync |
-|:---:|:---:|:---:|:---:|:---:|
-| ![HomeView Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4878.PNG) | ![Countdown Screenshot](screenshots/countdown.png) | ![Running Screenshot](screenshots/running.png) | ![ActivityView Screenshot](screenshots/activityview.png) | ![HealthApp Screenshot](screenshots/healthapp.png) |
+| Home View | Countdown | Running Tracker | Activity View |
+|:---:|:---:|:---:|:---:|
+| ![HomeView Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4879.PNG) | ![Countdown Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4881.PNG) | ![Running Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4882.PNG) | ![ActivityView Screenshot](https://github.com/Thet9354/IOS-Run-Club/blob/main/IMG_4880.PNG) |
 
 > Make sure to place your screenshots inside a `/screenshots/` folder in your repo and name them accordingly.
 
